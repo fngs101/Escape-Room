@@ -3,31 +3,30 @@ import java.util.List;
 //zasady gry bez sout bez scanner
 public class Game implements GameEngine, ElementsMediator
 {
-    private Room firstRoom;
-    private Room secondRoom;
+    private Room actualRoom;
     private Player player;
     private boolean isFinished;
 
     Game()
     {
-        firstRoom = new Room();
-        secondRoom = new Room();
-        Key firstRoomKey = new Key();
-        firstRoom.addElement(firstRoomKey);
-        firstRoom.addElement(new Door(firstRoomKey));
-        firstRoom.addElement(new Window());
+        actualRoom = new Room();
+        Key key = new Key();
+        actualRoom.addElement(key);
+        actualRoom.addElement(new Door(key));
+        actualRoom.addElement(new Window());
         player = new Player();
         isFinished = false;
     }
 
+
     public List<Element> getElementList()
     {
-        return firstRoom.getElements();
+        return actualRoom.getElements();
     }
 
     public String useItem(String choice) throws GameException
     {
-        Element foundElement = firstRoom.searchElement(choice);
+        Element foundElement = actualRoom.searchElement(choice);
         String message = foundElement.performAction(this);
         //tutaj pewność że został znaleziony elemeent, inaczej by zostało przerwane
         return message;
@@ -41,7 +40,7 @@ public class Game implements GameEngine, ElementsMediator
 
     public void removeElementFromRoom(Element element)
     {
-        firstRoom.removeElement(element);
+        actualRoom.removeElement(element);
     }
 
     public void addToPlayer(Element element)
@@ -62,4 +61,9 @@ public class Game implements GameEngine, ElementsMediator
         isFinished = true;
     }
 
+    @Override
+    public void setActualRoom(Room actualRoom)
+    {
+        this.actualRoom = actualRoom;
+    }
 }

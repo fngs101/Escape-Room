@@ -18,6 +18,8 @@ public class GameController
             showElements();
             String choice = choose();
             useElement(choice);
+            game.setActualRoom(new Room());
+
         }
         while (!game.isGameFinished());
 
@@ -27,6 +29,7 @@ public class GameController
     {
         List<Element> list = game.getElementList();
         System.out.println("Choose one of these objects: " + list);
+
 
     }
 
