@@ -12,24 +12,29 @@ public class GameController
     public void play()
     {
 
-        //dodac dwa nowe przedmioty z nowym dzialaniem i dodatkowy pokój
         do
         {
+            enterEscapeRoom();
             showElements();
             String choice = choose();
             useElement(choice);
-            game.setActualRoom(new Room());
+//            game.setActualRoom(new Room());
 
         }
         while (!game.isGameFinished());
 
     }
 
+    public void enterEscapeRoom()
+    {
+        System.out.println("Throughout your adventure here you will find many clues about a famous person.\n" +
+                "To get out you will need to find out his/her name and birthday.");
+    }
+
     public void showElements()
     {
         List<Element> list = game.getElementList();
         System.out.println("Choose one of these objects: " + list);
-
 
     }
 

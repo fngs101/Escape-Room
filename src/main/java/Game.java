@@ -14,6 +14,7 @@ public class Game implements GameEngine, ElementsMediator
         actualRoom.addElement(key);
         actualRoom.addElement(new Door(key));
         actualRoom.addElement(new Window());
+        actualRoom.ad
         player = new Player();
         isFinished = false;
     }

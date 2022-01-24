@@ -8,20 +8,13 @@ public class Door extends Element
         this.key = key;
     }
 
-//    @Override
-//    public String performAction(ElementsMediator game)
-//    {
-//
-//        return null;
-//    }
-
     @Override
     public String performAction(ElementsMediator elementsMediator)
     {
         String message = "";
         if(elementsMediator.hasPlayerGotElement(key))
         {
-            message = "You opened the door";
+            message = "You opened the door and you find yourself in another room";
             elementsMediator.finishGame();
         } else
         {
