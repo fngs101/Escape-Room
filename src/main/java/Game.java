@@ -15,7 +15,6 @@ public class Game implements GameEngine, ElementsMediator
         actualRoom.addElement(key);
         actualRoom.addElement(new Door(key));
         actualRoom.addElement(new Window());
-        actualRoom.addElement(new Book());
         player = new Player();
         isRoomFinished = false;
         isFinished = false;
@@ -73,8 +72,9 @@ public class Game implements GameEngine, ElementsMediator
     public void finishRoom()
     {
         isRoomFinished = true;
-        setActualRoom(actualRoom);
         removeAllElements();
+        setActualRoom(actualRoom);
+
     }
 
     @Override

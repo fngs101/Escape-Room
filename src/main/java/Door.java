@@ -2,10 +2,12 @@
 public class Door extends Element
 {
     private Key key;
+    private Code code;
     Door(Key key)
     {
         super("door");
         this.key = key;
+        code = new Code();
     }
 
     @Override
@@ -16,11 +18,14 @@ public class Door extends Element
         {
             message = "You opened the door and you find yourself in another room";
             elementsMediator.finishRoom();
-//            elementsMediator.finishGame();
-//            elementsMediator.removeElementFromRoom();
-        } else
+
+        } else if(elementsMediator.hasPlayerGotElement(code))
         {
-            message = "You don't have the key";
+            elementsMediator.finishGame();
+        }
+        else
+        {
+            message = "You don't have the key or code";
         }
         return  message;
     }

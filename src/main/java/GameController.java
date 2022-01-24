@@ -21,7 +21,7 @@ public class GameController
             useElement(choice);
 
         }
-        while (!game.isRoomFinished());
+        while (!game.isGameFinished());
 
     }
 
@@ -50,7 +50,6 @@ public class GameController
         try
         {
             String message = game.useItem(choice);
-//            System.out.println("Found object");
             System.out.println(message);
         } catch (GameException e)
         {
