@@ -15,7 +15,9 @@ public class Door extends Element
         if(elementsMediator.hasPlayerGotElement(key))
         {
             message = "You opened the door and you find yourself in another room";
-            elementsMediator.finishGame();
+            elementsMediator.finishRoom();
+//            elementsMediator.finishGame();
+//            elementsMediator.removeElementFromRoom();
         } else
         {
             message = "You don't have the key";

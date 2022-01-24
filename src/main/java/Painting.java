@@ -1,8 +1,8 @@
 public class Painting extends Element
 {
-    Painting(String name)
+    Painting()
     {
-        super(name);
+        super("painting");
     }
 
     @Override

@@ -5,6 +5,7 @@ public class Game implements GameEngine, ElementsMediator
 {
     private Room actualRoom;
     private Player player;
+    private boolean isRoomFinished;
     private boolean isFinished;
 
     Game()
@@ -14,8 +15,9 @@ public class Game implements GameEngine, ElementsMediator
         actualRoom.addElement(key);
         actualRoom.addElement(new Door(key));
         actualRoom.addElement(new Window());
-        actualRoom.ad
+        actualRoom.addElement(new Book());
         player = new Player();
+        isRoomFinished = false;
         isFinished = false;
     }
 
@@ -29,7 +31,6 @@ public class Game implements GameEngine, ElementsMediator
     {
         Element foundElement = actualRoom.searchElement(choice);
         String message = foundElement.performAction(this);
-        //tutaj pewność że został znaleziony elemeent, inaczej by zostało przerwane
         return message;
     }
 
@@ -37,6 +38,18 @@ public class Game implements GameEngine, ElementsMediator
     public boolean isGameFinished()
     {
         return isFinished;
+    }
+
+    @Override
+    public boolean isRoomFinished()
+    {
+        return isRoomFinished;
+    }
+
+    @Override
+    public void removeAllElements()
+    {
+        actualRoom.clearElementsList();
     }
 
     public void removeElementFromRoom(Element element)
@@ -54,6 +67,14 @@ public class Game implements GameEngine, ElementsMediator
     {
         return player.hasElement(element);
 
+    }
+
+    @Override
+    public void finishRoom()
+    {
+        isRoomFinished = true;
+        setActualRoom(actualRoom);
+        removeAllElements();
     }
 
     @Override

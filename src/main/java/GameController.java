@@ -11,17 +11,17 @@ public class GameController
 
     public void play()
     {
+        enterEscapeRoom();
 
         do
         {
-            enterEscapeRoom();
+
             showElements();
             String choice = choose();
             useElement(choice);
-//            game.setActualRoom(new Room());
 
         }
-        while (!game.isGameFinished());
+        while (!game.isRoomFinished());
 
     }
 
@@ -50,7 +50,7 @@ public class GameController
         try
         {
             String message = game.useItem(choice);
-            System.out.println("Found object");
+//            System.out.println("Found object");
             System.out.println(message);
         } catch (GameException e)
         {

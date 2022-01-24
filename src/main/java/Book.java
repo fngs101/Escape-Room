@@ -1,8 +1,8 @@
 public class Book extends Element
 {
-    Book(String name)
+    Book()
     {
-        super(name);
+        super("book");
     }
 
     @Override

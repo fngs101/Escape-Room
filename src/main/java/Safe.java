@@ -1,8 +1,8 @@
 public class Safe extends Element
 {
-    Safe(String name)
+    Safe()
     {
-        super(name);
+        super("safe");
     }
 
     @Override

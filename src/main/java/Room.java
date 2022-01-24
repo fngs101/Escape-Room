@@ -36,4 +36,9 @@ public class Room
     {
         elements.remove(element);
     }
+
+    public void clearElementsList()
+    {
+        elements.clear();
+    }
 }

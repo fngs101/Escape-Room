@@ -8,5 +8,9 @@ public interface GameEngine
 
     boolean isGameFinished();
 
+    boolean isRoomFinished();
+
+    void removeAllElements();
+
     void setActualRoom(Room actualRoom);
 }
