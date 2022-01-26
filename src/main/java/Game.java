@@ -104,7 +104,6 @@ public class Game implements GameEngine, ElementsMediator
         elements.add(new Book());
         elements.add(new Code());
         elements.add(new Painting());
-        elements.add(new Safe());
         elements.add(new Door());
 
     }

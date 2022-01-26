@@ -23,8 +23,11 @@ public class Book extends Element
     public String performAction(ElementsMediator elementsMediator)
     {
         //tutaj musi byc jakas interakcja z userem bo chciałam żeby pytał sie którą strone otworzyć
-        String message;
-        return null;
+        //ostatecznie bierze ja player
+        String message = "You took the book";
+        elementsMediator.removeElementFromRoom(this);
+        elementsMediator.addToPlayer(this);
+        return message;
     }
 
 
@@ -33,8 +36,4 @@ public class Book extends Element
         return pagesImages.get(page);
     }
 
-//    public String choose()
-//    {
-//        String message = ""
-//    }
 }
