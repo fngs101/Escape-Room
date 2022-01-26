@@ -49,8 +49,18 @@ public class GameController
         System.out.println("You chose " + choice);
         try
         {
-            String message = game.useItem(choice);
-            System.out.println(message);
+            if(choice.equals("book"))
+            {
+                System.out.println("Choose page");
+                String pageChoice = choose();
+                String message = game.useItem(pageChoice);
+
+            } else
+            {
+                String message = game.useItem(choice);
+                System.out.println(message);
+            }
+
         } catch (GameException e)
         {
             System.out.println(e.getMessage());
