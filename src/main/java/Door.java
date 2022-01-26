@@ -10,6 +10,11 @@ public class Door extends Element
         code = new Code();
     }
 
+    Door()
+    {
+        super("door");
+    }
+
     @Override
     public String performAction(ElementsMediator elementsMediator)
     {

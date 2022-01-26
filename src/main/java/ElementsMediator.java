@@ -10,4 +10,6 @@ public interface ElementsMediator
 
     void finishGame();
 
+    void removeElementFromPlayer(Element element);
+
 }

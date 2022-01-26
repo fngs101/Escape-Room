@@ -19,4 +19,9 @@ public class Player
     {
         return elements.contains(element);
     }
+
+    public void removeFromList(Element element)
+    {
+        elements.remove(element);
+    }
 }

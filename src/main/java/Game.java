@@ -7,11 +7,12 @@ public class Game implements GameEngine, ElementsMediator
     private Player player;
     private boolean isRoomFinished;
     private boolean isFinished;
+    private Key key;
 
     Game()
     {
         actualRoom = new Room();
-        Key key = new Key();
+        key = new Key();
         actualRoom.addElement(key);
         actualRoom.addElement(new Door(key));
         actualRoom.addElement(new Window());
@@ -74,6 +75,7 @@ public class Game implements GameEngine, ElementsMediator
         isRoomFinished = true;
         removeAllElements();
         setActualRoom(actualRoom);
+        removeElementFromPlayer(key);
 
     }
 
@@ -84,8 +86,26 @@ public class Game implements GameEngine, ElementsMediator
     }
 
     @Override
+    public void removeElementFromPlayer(Element element)
+    {
+        player.removeFromList(key);
+    }
+
+    @Override
     public void setActualRoom(Room actualRoom)
     {
         this.actualRoom = actualRoom;
+        startNewRoom();
+    }
+        //nie mialam innego pomysłu na dodanie nowych przedmiotów, tzn nie mogłam znaleźć innego miejsca
+    public void startNewRoom()
+    {
+        List<Element> elements = getElementList();
+        elements.add(new Book());
+        elements.add(new Code());
+        elements.add(new Painting());
+        elements.add(new Safe());
+        elements.add(new Door());
+
     }
 }
