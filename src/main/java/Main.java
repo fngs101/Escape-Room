@@ -6,7 +6,7 @@ public class Main
     {
         GameController gc = new GameController();
         gc.play();
-//        MyCanvas myCanvas = new MyCanvas();
+        MyCanvas myCanvas = new MyCanvas();
 //        myCanvas.showImage();
     }
 }

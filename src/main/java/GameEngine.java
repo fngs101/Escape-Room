@@ -7,10 +7,4 @@ public interface GameEngine
     String useItem(String choice) throws GameException;
 
     boolean isGameFinished();
-
-    boolean isRoomFinished();
-
-    void removeAllElements();
-
-    void setActualRoom(Room actualRoom);
 }

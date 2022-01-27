@@ -1,18 +1,23 @@
 
-public class Door extends Element
+public class Portal extends Element
 {
+    //portal to jest jednoczesnie książka i drzwi, któe do czegos prowadzą tzn do View (pokój i ksiazka)
     private Key key;
-    private Code code;
-    Door(Key key)
+    private Code code; //do ujednolicenia z kluczem
+    private ViewId id;
+
+    Portal(Key key, ViewId id)
     {
         super("door");
         this.key = key;
         code = new Code();
+        this.id = id;
     }
 
-    Door()
+    Portal(String name, ViewId id)
     {
-        super("door");
+        super(name);
+        this.id = id;
     }
 
     @Override

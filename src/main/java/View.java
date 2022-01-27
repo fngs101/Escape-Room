@@ -1,12 +1,19 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Room
+public class View
 {
     private List<Element> elements;
-    Room()
+    private String welcomeMessage;
+    View(String welcomeMessage)
     {
         elements = new ArrayList<>();
+        this.welcomeMessage = welcomeMessage;
+    }
+
+    public View(List<Element> elements)
+    {
+        this.elements = elements;
     }
 
     public List<Element> getElements()

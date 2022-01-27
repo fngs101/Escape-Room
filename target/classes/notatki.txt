@@ -1,0 +1,26 @@
+Wyświetla sie lista przedmiotow (gracz jest w lokalizacji)
+Gracz wybiera przedmiot (przedmioty w lokalizacji)
+Przedmiot wykonuje interakcje (wybrany przedmiot)
+Gracz otrzymuje komunikat co sie stało (wyświetlenie i powrot do lokalizacji)
+
+
+
+
+Wyświetla sie lista przedmiotow (View)
+Gracz wybiera przedmiot (Książka)
+Przedmiot wykonuje interakcje (przeniesienie gracza do kliążki)
+Gracz otrzymuje komunikat co sie stało (otworzyłeś książkę)
+
+Wyświetla sie lista przedmiotow (Lokalizacja książka)
+Gracz wybiera przedmiot (Strona 1....)
+Przedmiot wykonuje interakcje (strony wyświetlaja obraz i zmieniaja pokoj znowu na View)
+Gracz otrzymuje komunikat co sie stało (Tekst ze strony,)
+
+
+
+Przedmiot wyświetla listę opcji (strony)
+Gracz wybiera opcje
+gracz otrzymuje specjalny komunikat
+
+Wraca do listy wczesniejszy opcji
+

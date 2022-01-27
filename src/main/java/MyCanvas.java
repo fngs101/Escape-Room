@@ -20,7 +20,7 @@ public class MyCanvas extends Canvas
 
     public Image getImage(Toolkit toolkit)
     {
-        return toolkit.getImage(book.getImageFromPage(8));
+        return toolkit.getImage(book.getImageFromPage(7));
     }
 
     public void showImage()

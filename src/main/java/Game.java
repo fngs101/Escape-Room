@@ -1,35 +1,32 @@
+import java.util.ArrayList;
 import java.util.List;
 
 //zasady gry bez sout bez scanner
 public class Game implements GameEngine, ElementsMediator
 {
-    private Room actualRoom;
+    private View actualView;
     private Player player;
-    private boolean isRoomFinished;
     private boolean isFinished;
     private Key key;
-
+    private ViewManager viewManager;
+//klasa na budowanie przestrzeni pomocnik do tej klasy ViewFactor z metodami z których kazda daje jeden z widoków
     Game()
     {
-        actualRoom = new Room();
-        key = new Key();
-        actualRoom.addElement(key);
-        actualRoom.addElement(new Door(key));
-        actualRoom.addElement(new Window());
+        viewManager = new ViewManager();
+        actualView = viewManager.getViewById(ViewId.ROOM);
         player = new Player();
-        isRoomFinished = false;
         isFinished = false;
     }
 
 
     public List<Element> getElementList()
     {
-        return actualRoom.getElements();
+        return actualView.getElements();
     }
 
     public String useItem(String choice) throws GameException
     {
-        Element foundElement = actualRoom.searchElement(choice);
+        Element foundElement = actualView.searchElement(choice);
         String message = foundElement.performAction(this);
         return message;
     }
@@ -40,21 +37,9 @@ public class Game implements GameEngine, ElementsMediator
         return isFinished;
     }
 
-    @Override
-    public boolean isRoomFinished()
-    {
-        return isRoomFinished;
-    }
-
-    @Override
-    public void removeAllElements()
-    {
-        actualRoom.clearElementsList();
-    }
-
     public void removeElementFromRoom(Element element)
     {
-        actualRoom.removeElement(element);
+        actualView.removeElement(element);
     }
 
     public void addToPlayer(Element element)
@@ -72,11 +57,9 @@ public class Game implements GameEngine, ElementsMediator
     @Override
     public void finishRoom()
     {
-        isRoomFinished = true;
-        removeAllElements();
-        setActualRoom(actualRoom);
+        List<Element> elements = addElementsOf2thRoom();
+        actualView = new View(elements);
         removeElementFromPlayer(key);
-
     }
 
     @Override
@@ -91,20 +74,14 @@ public class Game implements GameEngine, ElementsMediator
         player.removeFromList(key);
     }
 
-    @Override
-    public void setActualRoom(Room actualRoom)
+    //nie mialam innego pomysłu na dodanie nowych przedmiotów, tzn nie mogłam znaleźć innego miejsca
+    public List<Element> addElementsOf2thRoom()
     {
-        this.actualRoom = actualRoom;
-        startNewRoom();
-    }
-        //nie mialam innego pomysłu na dodanie nowych przedmiotów, tzn nie mogłam znaleźć innego miejsca
-    public void startNewRoom()
-    {
-        List<Element> elements = getElementList();
-        elements.add(new Book());
+        List<Element> elements = new ArrayList<>();
+//        elements.add(new Book());
         elements.add(new Code());
         elements.add(new Painting());
-        elements.add(new Door());
-
+        elements.add(new Portal("Book", ViewId.BOOK));
+        return elements;
     }
 }
