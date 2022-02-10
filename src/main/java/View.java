@@ -11,8 +11,9 @@ public class View
         this.welcomeMessage = welcomeMessage;
     }
 
-    public View(List<Element> elements)
+    public View(String welcomeMessage, List<Element> elements)
     {
+        this.welcomeMessage = welcomeMessage;
         this.elements = elements;
     }
 

@@ -15,7 +15,6 @@ public class GameController
 
         do
         {
-
             showElements();
             String choice = choose();
             useElement(choice);

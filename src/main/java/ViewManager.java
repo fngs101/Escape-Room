@@ -19,11 +19,12 @@ public class ViewManager
 
     private View createRoom()
     {
-        View actualView = new View("You entered first room");
+        List<Element> elements = new ArrayList<>();
         Key key = new Key();
-        actualView.addElement(key);
-        actualView.addElement(new Portal(key, ViewId.ROOM2));
-        actualView.addElement(new Window());
+        elements.add(key);
+        elements.add(new Portal(key, ViewId.ROOM2));
+        elements.add(new Window());
+        View actualView = new View("You entered first room", elements);
         return actualView;
     }
     private View createRoom2()
@@ -32,12 +33,17 @@ public class ViewManager
         elements.add(new Code());
         elements.add(new Painting());
         elements.add(new Portal("Book", ViewId.BOOK));
-        View view = new View(elements);
+        elements.add(new Portal("Room", ViewId.ROOM));
+        View view = new View("You are in the second room", elements);
         return view;
     }
     private View createBook()
     {
-        return new View(new ArrayList<>());
+        List<Element> elements = new ArrayList<>();
+        elements.add(new Portal("exit", ViewId.ROOM2));
+        elements.add(new Page(1));
+        View view = new View("You open the book", elements);
+        return view;
     }
 
     public View getViewById(ViewId id)

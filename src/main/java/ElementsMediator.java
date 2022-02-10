@@ -6,7 +6,7 @@ public interface ElementsMediator
 
     boolean hasPlayerGotElement(Element element);
 
-    void finishRoom();
+    void changeView(ViewId id);
 
     void finishGame();
 
