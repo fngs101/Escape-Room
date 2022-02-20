@@ -1,6 +1,6 @@
 public enum ViewId
 {
-    ROOM,
-    ROOM2,
-    BOOK
+    room1,
+    room2,
+    book
 }

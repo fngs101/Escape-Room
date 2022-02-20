@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.List;
 
 //zasady gry bez sout bez scanner
@@ -13,7 +12,7 @@ public class Game implements GameEngine, ElementsMediator
     Game()
     {
         viewManager = new ViewManager();
-        actualView = viewManager.getViewById(ViewId.ROOM);
+        actualView = viewManager.getViewById(ViewId.room1);
         player = new Player();
         isFinished = false;
 

@@ -45,7 +45,6 @@ public class GameController
 
     public void useElement(String choice)
     {
-        System.out.println("You chose " + choice);
         try
         {
             String message = game.useItem(choice);

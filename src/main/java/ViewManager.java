@@ -11,9 +11,9 @@ public class ViewManager
         View room1 = createRoom();
         View room2 = createRoom2();
         View book = createBook();
-        views.put(ViewId.ROOM, room1);
-        views.put(ViewId.ROOM2, room2);
-        views.put(ViewId.BOOK, book);
+        views.put(ViewId.room1, room1);
+        views.put(ViewId.room2, room2);
+        views.put(ViewId.book, book);
 
     }
 
@@ -22,7 +22,7 @@ public class ViewManager
         List<Element> elements = new ArrayList<>();
         Key key = new Key();
         elements.add(key);
-        elements.add(new Portal(key, ViewId.ROOM2));
+        elements.add(new Portal(key, ViewId.room2));
         elements.add(new Window());
         View actualView = new View("You entered first room", elements);
         return actualView;
@@ -32,15 +32,15 @@ public class ViewManager
         List<Element> elements = new ArrayList<>();
         elements.add(new Code());
         elements.add(new Painting());
-        elements.add(new Portal("Book", ViewId.BOOK));
-        elements.add(new Portal("Room", ViewId.ROOM));
+        elements.add(new Portal("book", ViewId.book));
+        elements.add(new Portal("the first room", ViewId.room1));
         View view = new View("You are in the second room", elements);
         return view;
     }
     private View createBook()
     {
         List<Element> elements = new ArrayList<>();
-        elements.add(new Portal("exit", ViewId.ROOM2));
+        elements.add(new Portal("exit", ViewId.room2));
         elements.add(new Page(1));
         View view = new View("You open the book", elements);
         return view;
