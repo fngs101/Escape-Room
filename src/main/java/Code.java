@@ -2,7 +2,7 @@ public class Code extends Element
 {
     Code()
     {
-        super("code");
+        super("code", true);
     }
 
     @Override

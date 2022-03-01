@@ -3,7 +3,7 @@ public class Painting extends Element
     private boolean isTakenDown;
     Painting()
     {
-        super("painting");
+        super("painting", true);
         isTakenDown = false;
     }
 

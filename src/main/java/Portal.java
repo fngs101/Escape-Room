@@ -7,14 +7,14 @@ public class Portal extends Element
 
     Portal(Key key, ViewId id)
     {
-        super("door");
+        super("door", false);
         this.key = key;
         this.id = id;
     }
 
-    Portal(String name, ViewId id)
+    Portal(String name, ViewId id, boolean isInteractable)
     {
-        super(name);
+        super(name, isInteractable);
         this.id = id;
     }
 

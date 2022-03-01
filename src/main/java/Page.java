@@ -4,7 +4,7 @@ public class Page extends Element
 
     Page(int pageNr)
     {
-        super("Page " + pageNr);
+        super("Page " + pageNr, true);
         this.pageNumber = pageNr;
     }
 

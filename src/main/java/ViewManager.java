@@ -32,15 +32,15 @@ public class ViewManager
         List<Element> elements = new ArrayList<>();
         elements.add(new Code());
         elements.add(new Painting());
-        elements.add(new Portal("book", ViewId.book));
-        elements.add(new Portal("the first room", ViewId.room1));
+        elements.add(new Portal("book", ViewId.book, true));
+        elements.add(new Portal("room1", ViewId.room1, false));
         View view = new View("You are in the second room", elements);
         return view;
     }
     private View createBook()
     {
         List<Element> elements = new ArrayList<>();
-        elements.add(new Portal("exit", ViewId.room2));
+        elements.add(new Portal("exit", ViewId.room2, false));
         elements.add(new Page(1));
         View view = new View("You open the book", elements);
         return view;

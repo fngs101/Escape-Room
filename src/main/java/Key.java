@@ -3,7 +3,7 @@ public class Key extends Element
 
     Key()
     {
-        super("key");
+        super("key", true);
     }
 
 

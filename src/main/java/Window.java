@@ -3,7 +3,7 @@ public class Window extends Element
     private boolean isOpen;
     Window()
     {
-        super("window");
+        super("window", true);
         isOpen = false;
     }
 

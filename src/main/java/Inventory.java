@@ -8,7 +8,7 @@ public class Inventory extends Element
     private List<Element> elements;
     Inventory()
     {
-        super("inventory");
+        super("inventory", true);
         elements = new ArrayList<>();
     }
 
