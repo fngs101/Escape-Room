@@ -14,7 +14,7 @@ public class Painting extends Element
         isTakenDown = !isTakenDown;
         if(isTakenDown)
         {
-            message = "You took down the painting. You find a note with number 8";
+            message = "You took down the painting. You find a note with number 5";
         } else
         {
             message = "You hang back the painting";

@@ -42,6 +42,10 @@ public class ViewManager
         List<Element> elements = new ArrayList<>();
         elements.add(new Portal("exit", ViewId.room2, false));
         elements.add(new Page(1));
+        elements.add(new Page(2));
+        elements.add(new Page(3));
+        elements.add(new Page(4));
+        elements.add(new Page(5));
         View view = new View("You open the book", elements);
         return view;
     }

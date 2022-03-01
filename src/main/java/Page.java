@@ -11,7 +11,7 @@ public class Page extends Element
     @Override
     public String performAction(ElementsMediator elementsMediator)
     {
-        MyFrame myFrame = new MyFrame(1);
+        MyFrame myFrame = new MyFrame(pageNumber);
         myFrame.showMyFrame();
         return "Showing page";
     }
