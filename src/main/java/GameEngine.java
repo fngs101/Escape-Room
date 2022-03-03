@@ -4,7 +4,7 @@ public interface GameEngine
 {
     List<Element> getElementList();
 
-    String useItem(String choice) throws GameException;
+    String executeChoice(String choice) throws GameException;
 
     boolean isGameFinished();
 }

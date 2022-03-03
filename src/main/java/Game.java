@@ -23,7 +23,7 @@ public class Game implements GameEngine, ElementsMediator
         return actualView.getElements();
     }
 
-    public String useItem(String choice) throws GameException
+    public String executeChoice(String choice) throws GameException
     {
         Element foundElement = actualView.searchElement(choice);
         String message = foundElement.performAction(this);
@@ -57,6 +57,7 @@ public class Game implements GameEngine, ElementsMediator
     public void changeView(ViewId id)
     {
         actualView = viewManager.getViewById(id);
+        System.out.println(actualView.getWelcomeMessage()); //todo wymyślić jak wywalić to do controllera
     }
 
     @Override
@@ -72,3 +73,14 @@ public class Game implements GameEngine, ElementsMediator
     }
 
 }
+//widok podrzuca komunikat i ew. opcje
+//uzytkownik wprowadza input
+//input jest interpretowany w sposob zalezny od rodzaju widoku
+
+//rodzaje widokow:
+//wybor opcji
+//wprowadzanie kodu
+
+//ew. sekwencje
+
+

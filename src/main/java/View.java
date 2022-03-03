@@ -36,8 +36,7 @@ public class View
             {
                 return element;
             }
-        } throw new GameException("Game not found");
-
+        } throw new GameException("Element not found");
     }
 
     public void removeElement(Element element)
@@ -48,5 +47,11 @@ public class View
     public void clearElementsList()
     {
         elements.clear();
+    }
+
+
+    public String getWelcomeMessage()
+    {
+        return welcomeMessage;
     }
 }

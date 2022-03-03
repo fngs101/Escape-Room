@@ -60,7 +60,7 @@ public class GameController implements Colors
     {
         try
         {
-            String message = game.useItem(choice);
+            String message = game.executeChoice(choice);
             System.out.println(message);
 
         } catch (GameException e)

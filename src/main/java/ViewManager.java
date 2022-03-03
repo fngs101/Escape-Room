@@ -11,11 +11,11 @@ public class ViewManager
         View room1 = createRoom();
         View room2 = createRoom2();
         View book = createBook();
-        View outside = createExit();
+        View safe = createSafeView();
         views.put(ViewId.room1, room1);
         views.put(ViewId.room2, room2);
         views.put(ViewId.book, book);
-        views.put(ViewId.outside, outside);
+        views.put(ViewId.safe, safe);
 
     }
 
@@ -33,11 +33,10 @@ public class ViewManager
     private View createRoom2()
     {
         List<Element> elements = new ArrayList<>();
-        Key key = new Key("1881");
         elements.add(new Painting());
         elements.add(new Portal("book", ViewId.book, true));
         elements.add(new Portal("room1", ViewId.room1, false));
-        elements.add(new Portal(key, ViewId.outside));
+        elements.add(new Portal("safe", ViewId.safe, true));
         View view = new View("You are in the second room", elements);
         return view;
     }
@@ -52,6 +51,15 @@ public class ViewManager
         elements.add(new Page(5));
         View view = new View("You open the book", elements);
         return view;
+    }
+
+    private View createSafeView()
+    {
+        List<Element> elements = new ArrayList<>();
+        elements.add(new Portal("exit", ViewId.room2, false));
+        InputView view = new InputView("Insert numeric code", elements, new Safe("", "1881"));
+        return view;
+
     }
 
     private View createExit()
