@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
+//tak jak tu są rooms i book tak zrobic view keycode i w nim wyswietlic elementy tj cyferki?
 public class ViewManager
 {
     private Map<ViewId, View> views = new HashMap<>();
@@ -11,11 +11,14 @@ public class ViewManager
         View room1 = createRoom();
         View room2 = createRoom2();
         View book = createBook();
+        View outside = createExit();
         views.put(ViewId.room1, room1);
         views.put(ViewId.room2, room2);
         views.put(ViewId.book, book);
+        views.put(ViewId.outside, outside);
 
     }
+
 
     private View createRoom()
     {
@@ -30,10 +33,11 @@ public class ViewManager
     private View createRoom2()
     {
         List<Element> elements = new ArrayList<>();
-        elements.add(new Code());
+        Key key = new Key("1881");
         elements.add(new Painting());
         elements.add(new Portal("book", ViewId.book, true));
         elements.add(new Portal("room1", ViewId.room1, false));
+        elements.add(new Portal(key, ViewId.outside));
         View view = new View("You are in the second room", elements);
         return view;
     }
@@ -47,6 +51,12 @@ public class ViewManager
         elements.add(new Page(4));
         elements.add(new Page(5));
         View view = new View("You open the book", elements);
+        return view;
+    }
+
+    private View createExit()
+    {
+        View view = new View("You have escaped the room, congrats");
         return view;
     }
 

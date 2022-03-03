@@ -32,6 +32,9 @@ public class Portal extends Element
             message = "You have the the needed item: " + key.getName() + ". You moved to " + id;
             elementsMediator.changeView(id);
 
+        } else if(key.getName().equals("code"))
+        {
+            message = "You see a padlock that can be opened with a code";
         }
         else
         {
