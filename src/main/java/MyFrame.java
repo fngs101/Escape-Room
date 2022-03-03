@@ -4,7 +4,7 @@ import javax.swing.JFrame;
 public class MyFrame extends JFrame
 {
 
-    private static final String PATH = "C:\\Users\\jszymczak\\Desktop\\pic\\";
+    private static final String PATH = "src/main/resources/pic/";
     private Image image;
 
     MyFrame(int imgNumber)
