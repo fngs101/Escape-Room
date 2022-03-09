@@ -1,7 +1,6 @@
 
 public class Portal extends Element
 {
-    //portal to jest jednoczesnie książka i drzwi, któe do czegos prowadzą tzn do View (pokój i ksiazka)
     private Key key;
     private ViewId id;
 
@@ -25,7 +24,7 @@ public class Portal extends Element
         if(key == null)
         {
             elementsMediator.changeView(id);
-            if(id.equals(ViewId.safe))
+            if(id.equals(ViewId.SAFE))
             {
                 message = "You moved to " + id + ". Insert numeric code";
 

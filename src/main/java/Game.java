@@ -1,6 +1,6 @@
 import java.util.List;
 
-//zasady gry bez sout bez scanner
+
 public class Game implements GameEngine, ElementsMediator
 {
     private View actualView;
@@ -8,11 +8,10 @@ public class Game implements GameEngine, ElementsMediator
     private boolean isFinished;
     private ViewManager viewManager;
 
-//klasa na budowanie przestrzeni pomocnik do tej klasy ViewFactor z metodami z których kazda daje jeden z widoków
     Game()
     {
         viewManager = new ViewManager();
-        actualView = viewManager.getViewById(ViewId.room1);
+        actualView = viewManager.getViewById(ViewId.ROOM1);
         player = new Player();
         isFinished = false;
 

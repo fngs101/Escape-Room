@@ -3,10 +3,6 @@ import java.util.List;
 public class InputView extends View
 {
     private InputInterpreter inputInterpreter;
-    InputView(InputInterpreter inputInterpreter)
-    {
-        this.inputInterpreter = inputInterpreter;
-    }
 
     public InputView(List<Element> elements, InputInterpreter inputInterpreter)
     {

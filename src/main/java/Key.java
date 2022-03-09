@@ -1,15 +1,8 @@
 public class Key extends Element
 {
-    private String code;
     Key()
     {
         super("key", true);
-    }
-
-    Key(String code)
-    {
-        super("code", true);
-        this.code = code;
     }
 
     @Override

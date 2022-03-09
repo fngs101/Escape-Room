@@ -4,7 +4,5 @@ public class Main
     {
         GameController gc = new GameController();
         gc.play();
-//        MyFrame myFrame = new MyFrame();
-//        myCanvas.showImage();
     }
 }
