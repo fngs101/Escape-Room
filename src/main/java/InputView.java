@@ -3,15 +3,14 @@ import java.util.List;
 public class InputView extends View
 {
     private InputInterpreter inputInterpreter;
-    InputView(String welcomeMessage, InputInterpreter inputInterpreter)
+    InputView(InputInterpreter inputInterpreter)
     {
-        super(welcomeMessage);
         this.inputInterpreter = inputInterpreter;
     }
 
-    public InputView(String welcomeMessage, List<Element> elements, InputInterpreter inputInterpreter)
+    public InputView(List<Element> elements, InputInterpreter inputInterpreter)
     {
-        super(welcomeMessage, elements);
+        super(elements);
         this.inputInterpreter = inputInterpreter;
     }
 

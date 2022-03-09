@@ -4,16 +4,13 @@ import java.util.List;
 public class View
 {
     private List<Element> elements;
-    private String welcomeMessage;
-    View(String welcomeMessage)
+    View()
     {
         elements = new ArrayList<>();
-        this.welcomeMessage = welcomeMessage;
     }
 
-    public View(String welcomeMessage, List<Element> elements)
+    public View(List<Element> elements)
     {
-        this.welcomeMessage = welcomeMessage;
         this.elements = elements;
     }
 
@@ -50,8 +47,4 @@ public class View
     }
 
 
-    public String getWelcomeMessage()
-    {
-        return welcomeMessage;
-    }
 }

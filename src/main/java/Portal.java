@@ -24,13 +24,22 @@ public class Portal extends Element
         String message = "";
         if(key == null)
         {
-            message = "You moved to " + id;
             elementsMediator.changeView(id);
+            if(id.equals(ViewId.safe))
+            {
+                message = "You moved to " + id + ". Insert numeric code";
+
+            } else
+            {
+                message = "You moved to " + id;
+            }
+
         }
         else if(elementsMediator.hasPlayerGotElement(key))
         {
-            message = "You have the the needed item: " + key.getName() + ". You moved to " + id;
+            message = "You moved to " + id;
             elementsMediator.changeView(id);
+
 
         } else if(key.getName().equals("code"))
         {

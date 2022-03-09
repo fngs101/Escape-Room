@@ -35,7 +35,13 @@ public class GameController implements Colors
     public void showElements()
     {
         List<Element> list = game.getElementList();
-        System.out.println("Choose one of these objects: ");
+        if(list.size() == 1)
+        {
+            System.out.println("or");
+        } else
+        {
+            System.out.println("Choose one of these objects");
+        }
         for(Element element : list)
         {
            if(element.isInteractable())
